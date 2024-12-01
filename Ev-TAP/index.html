@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Event-Based Tracking Any Point with Motion-Augmented Temporal Consistency.">
+    <title>Event-Based Tracking Any Point with Motion-Augmented Temporal Consistency</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/tab_gallery.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="stylesheet" href="juxtapose/css/juxtapose.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="./static/js/magnifier.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/menlo" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/image_card_fader.css">
+    <link rel="stylesheet" href="./static/css/image_card_slider.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">Event-Based Tracking Any Point with Motion-Augmented Temporal Consistency</h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">Han Han</a><sup>1</sup>,</span>
+                            <span class="author-block">Wei Zhai</a><sup>1</sup></span>
+                            <span class="author-block">Yang Cao<sup>1</sup>,</span>
+                            <span class="author-block">Bin Li</a><sup>1</sup>,</span>
+                            <span class="author-block">Zheng-Jun Zha</a><sup>1</sup></span>
+                        </div>
+    
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>University of Science and Technology of China</span>
+                        </div>
+                        
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <img src="./static/imgs/fig1.png" width="100%" height="100px"></img>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero is-light is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-full-width">
+                        <h2 class="title is-3 has-text-centered">Abstract</h2>
+                        <div class="content has-text-justified">
+                        <p>
+                            Tracking Any Point (TAP) plays a crucial role in motion analysis. 
+                            Video-based approaches rely on iterative local matching for tracking, but they assume linear motion during the blind time between frames, which leads to target point loss under large displacements or nonlinear motion. 
+                            The high temporal resolution and motion blur-free characteristics of event cameras provide continuous, fine-grained motion information, capturing subtle variations with microsecond precision. 
+                            This paper presents an event-based framework for tracking any point, which tackles the challenges posed by spatial sparsity and motion sensitivity in events through two tailored modules. 
+                            Specifically, to resolve ambiguities caused by event sparsity, a motion-guidance module incorporates kinematic features into the local matching process. 
+                            Additionally, a variable motion aware module is integrated to ensure temporally consistent responses that are insensitive to varying velocities, thereby enhancing matching precision. 
+                            To validate the effectiveness of the approach, an event dataset for tracking any point is constructed by simulation, and is applied in experiments together with two real-world datasets. 
+                            The experimental results show that the proposed method outperforms existing SOTA methods. Moreover, it achieves 150% faster processing with competitive model parameters.
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section> 
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full-width">
+                    <h2 class="title is-3 has-text-centered">Framework</h2>
+                    <img src='./static/imgs/fig2.png'></img>
+                    <div class="content has-text-justified">
+                        <p>(a) Framework overview. Given the event data and the initial positions of target points as input, the model initializes the locations for subsequent time steps, along with appearance features. 
+                            It then iteratively calculates kinematic features and updates the appearance correlation map at each point to refine the trajectory. 
+                            (b) Motion-Guidance Module. MGM extracts kinematic features from the gradient information in the event stream, guiding appearance feature matching and forming a dynamic-appearance matching space with the appearance features. 
+                            (c) Variable Motion Aware Module. VMAM leverages kinematic features from MGM to produce temporally consistent feature responses, thereby resulting in robust correlation maps.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+                    <h2 class="title is-2">Ev-PointOdyssey Dataset</h2>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <video id="dollyzoom1" autoplay controls muted loop width="100%;">
+                        <source src="./static/videos/output_video2.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <video id="dollyzoom1" autoplay controls muted loop width="100%;">
+                        <source src="./static/videos/output_video1.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+                    <h2 class="title is-2">Results on Ev-PointOdyssey</h2>
+                </div>
+            </div>
+    
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <video id="dollyzoom1" autoplay controls muted loop width="100%;">
+                        <source src="./static/videos/output_video3.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <video id="dollyzoom1" autoplay controls muted loop width="100%;">
+                        <source src="./static/videos/output_video5.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <video id="dollyzoom1" autoplay controls muted loop width="100%;">
+                        <source src="./static/videos/output_video4.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-full">
+                    <h2 class="title is-2">Results on Real-world Dataset</h2>
+                </div>
+            </div>
+    
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <video id="dollyzoom1" autoplay controls muted loop width="100%;">
+                        <source src="./static/videos/output_video7.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="columns is-centered">
+                <div class="column is-full">
+                    <video id="dollyzoom1" autoplay controls muted loop width="100%;">
+                        <source src="./static/videos/output_video6.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>
+                To be updated
+        </code></pre>
+        </div>
+    </section> 
+      
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="content">
+                    <p>
+                        The template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>  
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
